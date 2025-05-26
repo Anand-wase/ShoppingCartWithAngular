@@ -1,0 +1,34 @@
+.add-product-card {
+  width: 310px;
+  margin: 0px auto;
+  padding: 5px;
+  display: flex;
+}
+
+mat-form-field {
+  width: 100%;
+  padding-bottom: 0px;
+}
+mat-card-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+mat-error {
+  padding-bottom: 5px;
+}
+.example-button-row {
+  display: table-cell;
+  align-items: center;
+  max-width: 600px;
+}
+section {
+  display: table;
+}
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}

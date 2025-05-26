@@ -1,0 +1,21 @@
+@if(totalPrice >0){
+  <div class="cart-container">
+    <div><strong>Your Shoppping Cart</strong></div>
+    <div class="cart-list">
+      @for (cartItem of userCart; track cartItem) {
+        <app-cart-item [cartItem]="cartItem"/>
+      }
+    </div>
+    <div class="checkout-button-wrapper">
+      <div class="cart-checkout">
+        <div class="total-price">
+          <strong>Total Cart Price: </strong><span style="color: rgb(4, 147, 49);"><strong>{{totalPrice | currency}}</strong></span>
+        </div>
+        <button mat-flat-button style="background-color: rgb(4, 147, 49); color: white;" (click)="onCheckout()">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+}
+@else {
+  <app-empty-cart/>
+}

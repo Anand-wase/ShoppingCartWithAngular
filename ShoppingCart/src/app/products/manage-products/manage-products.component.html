@@ -1,0 +1,58 @@
+<div class="demo-button-container">
+  <div class="actions-row">
+    <button mat-raised-button class="demo-button" style="background-color: rgb(4, 147, 49); color: white;" (click)="addProductDialog()">
+      Add Product
+    </button>
+    <div class="search-container">
+      <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
+      <button (click)="applyFilter($event)">
+        <mat-icon matPrefix>search</mat-icon>
+      </button>
+    </div>
+  </div>
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 demo-table">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="">Name</th>
+    <td mat-cell *matCellDef="let element">{{element.name}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+    <td mat-cell *matCellDef="let element" style="color: rgb(4, 147, 49);;">{{element.price | currency}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="imageUrl">
+    <th mat-header-cell *matHeaderCellDef>Image Url</th>
+    <td mat-cell *matCellDef="let element"><a [href]="element.imageUrl" target="_blank" rel="noopener">{{element.name}}</a></td>
+  </ng-container>
+
+  <ng-container matColumnDef="category">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Category</th>
+    <td mat-cell *matCellDef="let element">{{element.category}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-button (click)="onEditProduct(element.id)">
+        <span mat-button routerLinkActive="active-link">
+        <mat-icon  aria-hidden="false" fontIcon="edit"></mat-icon> 
+        </span>
+      </button>
+      <button mat-button (click)="onDeleteProduct(element.id)">
+        <span mat-button routerLinkActive="active-link">
+        <mat-icon  aria-hidden="false" style="color: rgb(173, 10, 10);" fontIcon="delete_outline"></mat-icon> 
+        </span>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  
+  <tr mat-row *matRowDef="let row; let i = index; columns: displayedColumns;" [ngClass]="{ 'alt-row': i % 2 === 0 }"></tr>
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+  </tr>
+</table>
+<mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+</div>

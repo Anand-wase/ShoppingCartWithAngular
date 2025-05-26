@@ -1,0 +1,30 @@
+.login-card {
+  width: 310px;
+  margin: 50px auto;
+  padding: 10px;
+  display: flex;
+  box-shadow: 50px;
+}
+
+mat-form-field {
+  width: 100%;
+  padding-bottom: 5px;
+}
+mat-card-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+mat-error {
+  padding-bottom: 5px;
+}
+img{
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  margin-bottom: 0px;
+}

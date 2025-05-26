@@ -1,0 +1,23 @@
+<!-- <mat-grid-list cols="3" rowHeight="1:2">
+  @for (product of products; track product) {
+    <mat-grid-tile><app-product [product]="product"/></mat-grid-tile>
+  }
+</mat-grid-list> -->
+<div class="actions-row">
+  <div class="search-container">
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
+    <button (click)="applyFilter($event)">
+      <mat-icon matPrefix>search for products here</mat-icon>
+    </button>
+  </div>
+</div>
+@if(products.length){
+  <div class="product-list">
+    @for (product of products; track product) {
+      <app-product [product]="product"/>
+    }
+  </div>
+}
+@else {
+  <app-empty-products></app-empty-products>
+}

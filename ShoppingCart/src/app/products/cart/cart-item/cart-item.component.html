@@ -1,0 +1,41 @@
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div class="card-content">
+        <div class="card-details">
+          <mat-card-title>{{ cartItem.name }}</mat-card-title>
+          <mat-card-subtitle>{{ cartItem.category }}</mat-card-subtitle>
+          <mat-card-subtitle>Price: <span style="color: rgb(4, 147, 49);">{{ cartItem.price | currency }}</span></mat-card-subtitle>
+          <mat-card-subtitle>Quantity: {{ cartItem.quantity }}</mat-card-subtitle>
+          <mat-card-subtitle>
+            Total Quantity Price: <span  style="color: rgb(4, 147, 49);">{{ cartItem.price * cartItem.quantity | currency }}</span>
+          </mat-card-subtitle>
+        </div>
+        </div>
+        <div class="card-image-actions">
+          <img
+          mat-card-sm-image
+          [src]="cartItem.imageUrl"
+          alt="product image"
+          class="product-image"
+        />
+        <div class="actions">
+          <button mat-button (click)="onSubstractItem()">
+            <span mat-button routerLinkActive="active-link">
+            <mat-icon aria-hidden="false" style="color: rgb(173, 10, 10);"fontIcon="remove_circle"></mat-icon> 
+            </span>
+          </button>
+          <button mat-button (click)="onRemoveItem()">
+            <span mat-button routerLinkActive="active-link">
+            <mat-icon style="color: rgb(173, 10, 10);" aria-hidden="false" fontIcon="delete_outline"></mat-icon> 
+            </span>
+          </button>
+          <button mat-button (click)="onAddItem()">
+            <span mat-button routerLinkActive="active-link">
+            <mat-icon style="color: rgb(4, 147, 49);" aria-hidden="false" fontIcon="add_circle"></mat-icon> 
+            </span>
+          </button>
+        </div>
+        </div>
+    </mat-card-header>
+  </mat-card>
+  

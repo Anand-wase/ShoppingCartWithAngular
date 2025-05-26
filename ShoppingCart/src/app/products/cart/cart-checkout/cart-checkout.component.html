@@ -1,0 +1,15 @@
+<mat-list style="max-height: 400px; overflow: auto;">
+  <h3>Checkout review</h3>
+  <mat-divider></mat-divider>
+  @for (product of userCart?.cartList; track product) {
+      <p><strong>Product name:</strong> {{ product.name }}</p>
+      <p><strong>Price:</strong> ₹{{ product.price }}</p>
+      <p><strong>Quantity: </strong> {{ product.quantity }}</p>
+    <mat-divider></mat-divider>
+  }
+  <p>Total :<strong>₹{{totalPrice}}</strong></p>
+  <mat-dialog-actions align="center">
+    <button style="background-color: rgb(214, 9, 9); color: white; font-size: small;" mat-button mat-dialog-close>Close</button>
+    <button style="background-color: rgb(4, 117, 40); color: white; font-size: small;" mat-button (click)="onCheckOut()">Checkout</button>
+  </mat-dialog-actions>
+</mat-list>

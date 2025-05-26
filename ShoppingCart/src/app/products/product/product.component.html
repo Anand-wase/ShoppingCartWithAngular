@@ -1,0 +1,15 @@
+<div class="product-card">
+  <div class="product-image">
+    <img [src]="product.imageUrl" alt="{{ product.name }}" />
+  </div>
+  <div class="product-details">
+    <h3>{{ product.name }}</h3>
+    <p><em>{{ product.category }}</em></p>
+    <p>{{ product.description }}</p>
+    <hr />
+    <div class="price-action-row">
+      <strong style="color: rgb(4, 147, 49);">{{ product.price | currency }}</strong>
+      <button mat-button style="background-color: rgb(4, 147, 49); color: white;" (click)="addItemToCart()">Add to Cart</button></div>
+  </div>
+</div>
+

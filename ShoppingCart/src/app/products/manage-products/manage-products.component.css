@@ -1,0 +1,56 @@
+.mat-elevation-z8 demo-table {
+  margin: 20px auto;
+  border: 10px solid #ccc;
+  border-radius: 10px;
+  width: 100%;
+}
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+.actions-row {
+  display: flex;
+  align-items: center;
+  gap: 16px; 
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 10px; 
+}
+
+.search-container {
+  width: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  gap: 8px;
+  padding: 10px;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 10px 40px 10px 16px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.search-container button {
+  position: absolute;
+  right: 6px;
+  top: 5px;
+  bottom: 5px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 10px;
+  color: #555;
+}
+
+
+

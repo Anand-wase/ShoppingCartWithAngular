@@ -1,0 +1,20 @@
+<mat-toolbar>
+  <span>
+    <p mat-button class="white-button" [routerLink]="['~/']" routerLinkActive="selected" ><img  src="https://img.freepik.com/premium-vector/abstract-modern-ecommerce-logo-design-colorful-gradient-shopping-bag-logo-template_467913-972.jpg?semt=ais_hybrid&w=740" alt=""></p></span>
+  <span class="example-spacer"></span>
+  @if(isLoggedIn){
+    <div class="navbar-actions">
+    @if(!isAdmin){
+      <a [routerLink]="'/products'" routerLinkActive="selected" class="cart-icon">
+        <mat-icon  aria-hidden="false" aria-label="home" fontIcon="home"></mat-icon> 
+      </a>
+
+      <a [matBadge]="cartCount?cartCount : ''" [routerLink]="['../cart']" routerLinkActive="selected" class="cart-icon">
+        <mat-icon  aria-hidden="false" aria-label="shopping_cart" fontIcon="shopping_cart"></mat-icon> 
+      </a>
+  }
+    Welcome, {{currentUserName}}
+      <a class="white-button" routerLinkActive="selected" (click)="onLogout()" ><mat-icon  aria-hidden="false" aria-label="logout icon" fontIcon="logout"></mat-icon></a>
+      </div>
+  }
+</mat-toolbar>
